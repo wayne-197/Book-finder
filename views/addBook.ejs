@@ -3,15 +3,47 @@
 
 <head>
     <title>Add Book</title>
+    <style>
+        input[type=text] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+    
+        input[type=submit] {
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    
+        input[type=submit]:hover {
+            background-color: #45a049;
+        }
+    
+        label {
+            padding: 4px;
+            margin-top: 4px;
+        }
+    </style>
 </head>
-<body>
+<body><%- include('partials/header') %>
+<br>
     <form method="post" action="/add-book">
         <label for="book_name">Book Name</label>
-        <input type="text" name="book_name" placeholder="Enter Book's Name">
+        <input type="text" name="book_name" placeholder="Enter Book's Name" required>
         <label for="year_publish">Year of Publish</label>
-        <input type="text" name="year_publish" placeholder="Year of Publish">
+        <input type="text" name="year_publish" placeholder="Year of Publish" required>
         <label for="author_name">Author Name</label>
-        <input type="text" name="author_name" placeholder="Author's Name">
+        <input type="text" name="author_name" placeholder="Author's Name" required>
         <input type="submit" value="Submit">
     </form>
 

@@ -38,9 +38,7 @@ app.post("/add-book", (req, res) => {
         year: req.body.year_publish,
         author: req.body.author_name
     }
-    console.log(book);
     booksCollection.push(book);
-    console.log(booksCollection);
     res.redirect("/home");
 })
 

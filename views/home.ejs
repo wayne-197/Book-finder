@@ -3,23 +3,64 @@
 
 <head>
     <title>Book Finder</title>
+    <style>
+        body {
+            text-align: center;
+        }
+    
+        h1 {
+            font-size: 70px;
+        }
+    
+        #btn {
+            color: white;
+            background-color: rgb(10, 77, 21);
+        }
+    
+        .book-list {
+            font-size: 30px;
+        }
+    
+        .flex-container {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+    
+        }
+    
+        .flex-container>div {
+            background-color: #f1f1f1;
+            width: 140px;
+            margin: 10px;
+            text-align: center;
+            line-height: 25px;
+            padding: 3px;
+            font-size: 15px;
+            align-content: center;
+        }
+    </style>
 </head>
 
 <body>
+    <%- include('partials/header') %>
+    <br>
     <h1>Book Finder</h1>
 
     <form action="/searchBooks" method="post">
-        <input type="text" id="text" name="bookname" />
+        <input type="text" id="text" name="bookname" required />
         <input type="submit" id="btn" name="btn" />
     </form>
 
     <p class="book-list">Book List:</p>
     <% for( i = 0; i < books.length; i++) { %>
-   <ul>
-            <li><strong>Book Name:</strong><%= (books[i]).name; %></li>
-            <li><strong>Year of Publish:</strong><%= (books[i]).year; %></li>
-            <li><strong>Author's Name:</strong><%= (books[i]).author; %></li>
-    </ul>
+    <div class="flex-container">
+        <div>
+            <p><strong>Book Name:</strong><%= (books[i]).name; %></p>
+            <p><strong>Year of Publish:</strong><%= (books[i]).year; %></p>
+            <p><strong>Author's Name:</strong><%= (books[i]).author; %> </p>
+        </div>
+    </div>
     
     <% } %>
    
