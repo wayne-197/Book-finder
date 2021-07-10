@@ -44,6 +44,28 @@ app.post("/add-book", (req, res) => {
     res.redirect("/home");
 })
 
+//Searching Books route
+
+app.post("/searchBooks", (req, res) => {
+    var searchName = req.body.bookname;
+    res.redirect("/searchBooks/" + searchName);
+})
+
+app.get("/searchBooks/:searchName", (req, res) => {
+    var name = req.params.searchName;
+    let obj = booksCollection.find(o => o.name === name);
+    if (obj) {
+        res.render('bookFound', {
+            name: obj.name,
+            year: obj.year,
+            author: obj.author
+        })
+    } else {
+        res.redirect("/home")
+    }
+})
+
+
 
 server.listen(port, () => {
     console.log("Server started at port " + port);

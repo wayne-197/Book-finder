@@ -1,0 +1,29 @@
+<!DOCTYPE HTML >
+    <html>
+
+        <head>
+            <title>Book Finder</title>
+        </head>
+
+        <body>
+  
+
+                <h1>Book Finder</h1>
+
+                <form action="/searchBooks" method="post">
+                    <input type="text" id="text" name="bookname" />
+                    <input type="submit" id="btn" name="btn" />
+                </form>
+
+                <p class="heading-list">Your searched Book is</p>
+                <div class="flex-container">
+                    <div>
+                        <p><strong>Book Name:</strong><%= name; %></p>
+                        <p><strong>Year of Publish:</strong><%= year; %></p>
+                        <p><strong>Author's Name:</strong><%= author; %> </p>
+                    </div>
+                </div>
+
+</body>
+
+</html>
